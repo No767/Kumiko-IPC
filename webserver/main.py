@@ -6,8 +6,15 @@ from quart import Quart
 
 load_dotenv()
 
+
 app = Quart(__name__)
 ipc = Client(secret_key=os.getenv("IPC_Secret_Key"))
+
+
+# @app.before_serving
+# async def startRabbitMQConsumer():
+#     rmqConsumer = RMQService()
+#     app.service_task  = asyncio.ensure_future(rmqonsumer.init())
 
 
 @app.route("/")

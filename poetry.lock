@@ -1,4 +1,19 @@
 [[package]]
+name = "aio-pika"
+version = "8.2.4"
+description = "Wrapper for the aiormq for asyncio and humans."
+category = "main"
+optional = false
+python-versions = ">3.6, <4"
+
+[package.dependencies]
+aiormq = ">=6.4.0,<6.5.0"
+yarl = "*"
+
+[package.extras]
+develop = ["aiomisc (>=16.0,<17.0)", "coverage (!=4.3)", "coveralls", "nox", "pyflakes (<2.5)", "pylava", "pytest", "pytest-cov", "shortuuid", "sphinx", "sphinx-autobuild", "timeout-decorator", "tox (>=2.4)"]
+
+[[package]]
 name = "aiofiles"
 version = "22.1.0"
 description = "File support for asyncio."
@@ -25,6 +40,21 @@ yarl = ">=1.0,<2.0"
 
 [package.extras]
 speedups = ["Brotli", "aiodns", "cchardet"]
+
+[[package]]
+name = "aiormq"
+version = "6.4.2"
+description = "Pure python AMQP asynchronous client library"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+pamqp = "3.2.1"
+yarl = "*"
+
+[package.extras]
+develop = ["aiomisc (>=16.0,<17.0)", "coverage (!=4.3)", "coveralls", "pylava", "pytest", "pytest-cov", "tox (>=2.4)"]
 
 [[package]]
 name = "aiosignal"
@@ -135,7 +165,7 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7
 
 [[package]]
 name = "discord.py"
-version = "2.1.0"
+version = "2.0.1"
 description = "A Python wrapper for the Discord API"
 category = "main"
 optional = false
@@ -329,6 +359,18 @@ python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*
 
 [package.dependencies]
 setuptools = "*"
+
+[[package]]
+name = "pamqp"
+version = "3.2.1"
+description = "RabbitMQ Focused AMQP low-level library"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+codegen = ["lxml", "requests", "yapf"]
+testing = ["coverage", "flake8", "flake8-comprehensions", "flake8-deprecated", "flake8-import-order", "flake8-print", "flake8-quotes", "flake8-rst-docstrings", "flake8-tuple", "yapf"]
 
 [[package]]
 name = "platformdirs"
@@ -560,9 +602,13 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<4.0"
-content-hash = "0c27e07ae7b80aae6294bb6a60c6e61d7730a62f5555e0498aa25762d3bfa19b"
+content-hash = "f06f52b56d6a7ebd64d17c5b857645ca75e498265ffd8b033e790536eced0fc0"
 
 [metadata.files]
+aio-pika = [
+    {file = "aio-pika-8.2.4.tar.gz", hash = "sha256:71f0a67cc45bdd0e6b64121f2eda8462937a2d83266855a55d7d8c106c14d3d6"},
+    {file = "aio_pika-8.2.4-py3-none-any.whl", hash = "sha256:997e74efab11c34f37ff20e91316a4d7f5d3ae13167e3adec809aac09c7b84aa"},
+]
 aiofiles = [
     {file = "aiofiles-22.1.0-py3-none-any.whl", hash = "sha256:1142fa8e80dbae46bb6339573ad4c8c0841358f79c6eb50a493dceca14621bad"},
     {file = "aiofiles-22.1.0.tar.gz", hash = "sha256:9107f1ca0b2a5553987a94a3c9959fe5b491fdf731389aa5b7b1bd0733e32de6"},
@@ -641,6 +687,10 @@ aiohttp = [
     {file = "aiohttp-3.8.1-cp39-cp39-win_amd64.whl", hash = "sha256:1c182cb873bc91b411e184dab7a2b664d4fea2743df0e4d57402f7f3fa644bac"},
     {file = "aiohttp-3.8.1.tar.gz", hash = "sha256:fc5471e1a54de15ef71c1bc6ebe80d4dc681ea600e68bfd1cbce40427f0b7578"},
 ]
+aiormq = [
+    {file = "aiormq-6.4.2-py3-none-any.whl", hash = "sha256:fdbf2efed73a2e07437de3af5e3591165efb155a18394dc7295cac9e80943c62"},
+    {file = "aiormq-6.4.2.tar.gz", hash = "sha256:fd815d2bb9d8c950361697a74c1b067bc078726c3ef3b837e979a68a4986b148"},
+]
 aiosignal = [
     {file = "aiosignal-1.3.1-py3-none-any.whl", hash = "sha256:f8376fb07dd1e86a584e4fcdec80b36b7f81aac666ebc724e2c090300dd83b17"},
     {file = "aiosignal-1.3.1.tar.gz", hash = "sha256:54cd96e15e1649b75d6c87526a6ff0b6c1b0dd3459f43d9ca11d48c339b68cfc"},
@@ -682,8 +732,8 @@ colorama = [
     {file = "colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"},
 ]
 "discord.py" = [
-    {file = "discord.py-2.1.0-py3-none-any.whl", hash = "sha256:a2cfa9f09e3013aaaa43600cc8dfaf67c532dd34afcb71e550f5a0dc9133a5e0"},
-    {file = "discord.py-2.1.0.tar.gz", hash = "sha256:027ccdd22b5bb66a9e19cbd8daa1bc74b49271a16a074d57e52f288fcfa208e8"},
+    {file = "discord.py-2.0.1-py3-none-any.whl", hash = "sha256:aeb186348bf011708b085b2715cf92bbb72c692eb4f59c4c0b488130cc4c4b7e"},
+    {file = "discord.py-2.0.1.tar.gz", hash = "sha256:309146476e986cb8faf038cd5d604d4b3834ef15c2d34df697ce5064bf5cd779"},
 ]
 distlib = [
     {file = "distlib-0.3.6-py2.py3-none-any.whl", hash = "sha256:f35c4b692542ca110de7ef0bea44d73981caeb34ca0b9b6b2e6d7790dda8f80e"},
@@ -958,6 +1008,10 @@ multidict = [
 nodeenv = [
     {file = "nodeenv-1.7.0-py2.py3-none-any.whl", hash = "sha256:27083a7b96a25f2f5e1d8cb4b6317ee8aeda3bdd121394e5ac54e498028a042e"},
     {file = "nodeenv-1.7.0.tar.gz", hash = "sha256:e0e7f7dfb85fc5394c6fe1e8fa98131a2473e04311a45afb6508f7cf1836fa2b"},
+]
+pamqp = [
+    {file = "pamqp-3.2.1-py2.py3-none-any.whl", hash = "sha256:15acef752356593ca569d13dfedc8ada9f17deeeb8cec4f7b77825e2b6c7de3e"},
+    {file = "pamqp-3.2.1.tar.gz", hash = "sha256:22550ceb1ca50aafda65873e77e8c1c1b139fb5975e1a09860fae940cf8e970a"},
 ]
 platformdirs = [
     {file = "platformdirs-2.5.4-py3-none-any.whl", hash = "sha256:af0276409f9a02373d540bf8480021a048711d572745aef4b7842dad245eba10"},
