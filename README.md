@@ -6,18 +6,18 @@
 
 [![Required Python Version](https://img.shields.io/badge/Python-3.8%20|%203.9%20|%203.10%20|%203.11-blue?logo=python&logoColor=white)](https://github.com/No767/Kumiko-IPC/blob/dev/pyproject.toml) [![GitHub License](https://img.shields.io/github/license/No767/Kumiko-IPC?label=License&logo=github)](https://github.com/No767/Kumiko-IPC/blob/dev/LICENSE)
 
-Kumiko's Custom IPC Workers
+Kumiko's High Performance IPC Workers
 
 <div align=left>
 
 ## Info
-This github repo hosts the source code for Kumiko's IPC worker. The IPC worker uses Celery in order to spilt the workloads into manageable tasks, which then only get sent to Kumiko. This creates a distrbuted workload, therefore spreading out the load and helping with performance. 
+This GitHub repo hosts the source code used for Kumiko's IPC workers. The IPC workers distribute tasks, and those tasks is what actually run the code to communicate with Kumiko, and vice versa. 
 
 ## Checklist for features
 
-- [ ] Implement Celery Workers
+- [ ] Flesh out Dramatiq Workers
 - [ ] Docker Support
-- [ ] Prometheus Metrics
+- [x] Prometheus Metrics (Provided by Dramatiq)
 
 ## License
 

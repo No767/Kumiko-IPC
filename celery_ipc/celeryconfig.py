@@ -12,6 +12,8 @@ CONNECTION_URI = (
     f"pyamqp://{RABBITMQ_USER}:{RABBITMQ_PASSWORD}@{RABBITMQ_HOST}:{RABBITMQ_PORT}/"
 )
 
-
-task_serializer="msgpack"
-result_serializer = 'msgpack'
+imports = ("tasks",)
+accept_content = ["msgpack"]
+broker_url = CONNECTION_URI
+task_serializer = "msgpack"
+result_serializer = "msgpack"

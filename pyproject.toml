@@ -13,6 +13,9 @@ better-ipc = "^2.0.1"
 celery = {extras = ["gevent", "msgpack", "redis"], version = "^5.2.7"}
 librabbitmq = {git = "https://github.com/celery/librabbitmq.git"}
 amqp = "^5.1.1"
+asgiref = "^3.5.2"
+discord-py = "^2.1.0"
+dramatiq = {extras = ["rabbitmq", "watch"], version = "^1.13.0"}
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^2.20.0"
