@@ -9,8 +9,7 @@ RUN apt update \
   && apt install -y --no-install-recommends \
   build-essential \
   ca-certificates \
-  curl \
-  git
+  curl
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
