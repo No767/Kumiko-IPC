@@ -55,7 +55,7 @@ USER kumiko_ipc
 
 ENV PATH="${PATH}:/home/kumiko_ipc/.local/bin"
 
-RUN pip install --user --no-index --find-links=/Kumiko/wheels -r requirements.txt
+RUN pip install --user --no-index --find-links=/Kumiko_IPC/wheels -r requirements.txt
 
 ENTRYPOINT ["/usr/bin/tini", "--"]
 
