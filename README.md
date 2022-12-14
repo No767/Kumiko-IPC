@@ -16,7 +16,7 @@ This GitHub repo hosts the source code used for Kumiko's IPC workers. The IPC wo
 ## Checklist for features
 
 - [ ] Flesh out Dramatiq Workers
-- [ ] Docker Support
+- [x] Docker Support
 - [x] Prometheus Metrics (Provided by Dramatiq)
 
 ## License
