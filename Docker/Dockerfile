@@ -37,7 +37,7 @@ RUN apt update \
   netcat
 
 WORKDIR /Kumiko_IPC
-COPY /dramatiq_ipc /Kumiko_IPC/dramatiq_ipc
+COPY /dramatiq_ipc/ /Kumiko_IPC/dramatiq_ipc/
 COPY /Docker/start.sh /Kumiko_IPC/start.sh
 COPY /Docker/wait-for /Kumiko_IPC/wait-for
 
