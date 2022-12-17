@@ -23,8 +23,8 @@ CONNECTION_URI = (
 body = json.dumps(
     {
         "queue_name": "default",
-        "actor_name": "testing",
-        "args": ["hello world"],
+        "actor_name": "create_embed",
+        "args": [1049170298496364577, {"embed": "test"}],
         "kwargs": {},
         "options": {},
         "message_id": f"{str(uuid.uuid4())}",
