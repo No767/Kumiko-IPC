@@ -47,4 +47,4 @@ while true; do
   fi
 done
 
-dramatiq-gevent /Kumiko_IPC/dramatiq_ipc/worker -p 2
+dramatiq-gevent /Kumiko_IPC/dramatiq_ipc/worker -p 4

@@ -27,8 +27,13 @@ def request_user_data(user_id: int):
     asyncio.run(ipc.request("get_user_data", user_id=user_id))
 
 
-@dramatiq.actor(priority=0)
+@dramatiq.actor(priority=5)
 def create_embed(channel_id: int, embed_content: dict):
     asyncio.run(
         ipc.request("create_embed", channel_id=channel_id, embed_content=embed_content)
     )
+
+
+@dramatiq.actor(priority=0)
+def testing():
+    print("testing")
