@@ -47,5 +47,3 @@ while true; do
     exit $?
   fi
 done
-
-dramatiq-gevent dramatiq_ipc.worker -p 2

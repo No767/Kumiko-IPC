@@ -35,5 +35,5 @@ def create_embed(channel_id: int, embed_content: dict):
 
 
 @dramatiq.actor(priority=0)
-def testing():
-    print("testing")
+def testing(args):
+    print(f"testing {args}")
