@@ -38,7 +38,7 @@ fi
 
 delay=1
 while true; do
-  dramatiq-gevent dramatiq_ipc.worker -p 2
+  dramatiq-gevent dramatiq_ipc.worker -p 1
   if [ $? -eq 3 ]; then
     echo "Connection error encountered on startup. Retrying in $delay second(s)..."
     sleep $delay

@@ -24,7 +24,7 @@ body = json.dumps(
     {
         "queue_name": "default",
         "actor_name": "testing",
-        "args": [],
+        "args": ["hello world"],
         "kwargs": {},
         "options": {},
         "message_id": f"{str(uuid.uuid4())}",
