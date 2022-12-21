@@ -11,21 +11,9 @@ services:
       - 15672:15672
     hostname: kumiko_ipc
 
-  redis:
-    container_name: Kumiko-IPC-Redis
-    image: redis:7
-    ports:
-      - 6379:6379
-    volumes:
-      - redis_volume:/data
-    command: redis-server --save 60 1 --loglevel warning
-
   kumiko_ipc:
     container_name: Kumiko-IPC
     image: no767/kumiko-ipc:edge
     env_file:
       - .env
     restart: always
-
-volumes:
-  redis_volume:
